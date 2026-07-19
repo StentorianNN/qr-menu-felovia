@@ -139,12 +139,76 @@ export const menu = {
     },
     {
       "name": "Soğuk İçecekler",
-      "note": "Meyve suları şeker ilavesizdir",
+      "note": "Sıkma meyve suları · Şeker ilavesizdir · 250 ml",
       "items": [
         {
-          "name": "Meyve Suyu",
+          "name": "Portakal Suyu",
           "price": 150,
-          "desc": "Portakal, nar & portakal, vişne, nar, karadut, kara üzüm, şeftali, kayısı, böğürtlen, elma, orman perisi, erik, ahududu ya da karışık"
+          "image": "/images/juice-portakal.jpg"
+        },
+        {
+          "name": "Nar & Portakal Suyu",
+          "price": 150,
+          "image": "/images/juice-nar-portakal.jpg"
+        },
+        {
+          "name": "Vişne Suyu",
+          "price": 150,
+          "image": "/images/juice-visne.jpg"
+        },
+        {
+          "name": "Nar Suyu",
+          "price": 150,
+          "image": "/images/juice-nar.jpg"
+        },
+        {
+          "name": "Karadut Suyu",
+          "price": 150,
+          "image": "/images/juice-karadut.jpg"
+        },
+        {
+          "name": "Kara Üzüm Suyu",
+          "price": 150,
+          "image": "/images/juice-kara-uzum.jpg"
+        },
+        {
+          "name": "Şeftali Suyu",
+          "price": 150,
+          "image": "/images/juice-seftali.jpg"
+        },
+        {
+          "name": "Kayısı Suyu",
+          "price": 150,
+          "image": "/images/juice-kayisi.jpg"
+        },
+        {
+          "name": "Böğürtlen Suyu",
+          "price": 150,
+          "image": "/images/juice-bogurtlen.jpg"
+        },
+        {
+          "name": "Elma Suyu",
+          "price": 150,
+          "image": "/images/juice-elma.jpg"
+        },
+        {
+          "name": "Orman Perisi Suyu",
+          "price": 150,
+          "image": "/images/juice-orman-perisi.jpg"
+        },
+        {
+          "name": "Erik Suyu",
+          "price": 150,
+          "image": "/images/juice-erik.jpg"
+        },
+        {
+          "name": "Ahududu Suyu",
+          "price": 150,
+          "image": "/images/juice-ahududu.jpg"
+        },
+        {
+          "name": "Karışık Suyu",
+          "price": 150
         },
         {
           "name": "Coca Cola",
