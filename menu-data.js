@@ -212,23 +212,33 @@ export const menu = {
         },
         {
           "name": "Coca Cola",
-          "price": 120
+          "price": 120,
+          "image": "/images/drink-cola.jpg"
         },
         {
           "name": "Coca Cola Zero",
-          "price": 120
+          "price": 120,
+          "image": "/images/drink-cola-zero.jpg"
         },
         {
           "name": "Özerhisar Ayran",
-          "price": 120
+          "price": 120,
+          "image": "/images/drink-ayran.jpg"
+        },
+        {
+          "name": "Arslan Ayran",
+          "price": 120,
+          "image": "/images/drink-ayran-arslan.jpg"
         },
         {
           "name": "Soda",
-          "price": 90
+          "price": 90,
+          "image": "/images/drink-soda.jpg"
         },
         {
           "name": "Su",
-          "price": 50
+          "price": 50,
+          "image": "/images/drink-su.jpg"
         }
       ]
     },
