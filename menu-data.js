@@ -207,10 +207,6 @@ export const menu = {
           "image": "/images/juice-ahududu.jpg"
         },
         {
-          "name": "Karışık Suyu",
-          "price": 150
-        },
-        {
           "name": "Coca Cola",
           "price": 120,
           "image": "/images/drink-cola.jpg"
