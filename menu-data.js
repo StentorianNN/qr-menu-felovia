@@ -251,11 +251,13 @@ export const menu = {
         },
         {
           "name": "Latte",
-          "price": 210
+          "price": 210,
+          "image": "/images/coffee-latte.jpg"
         },
         {
           "name": "Filtre Kahve",
-          "price": 190
+          "price": 190,
+          "image": "/images/coffee-filtre.jpg"
         },
         {
           "name": "Espresso",
@@ -263,7 +265,8 @@ export const menu = {
         },
         {
           "name": "Americano",
-          "price": 190
+          "price": 190,
+          "image": "/images/coffee-americano.jpg"
         },
         {
           "name": "Türk Kahvesi",
@@ -271,11 +274,13 @@ export const menu = {
         },
         {
           "name": "Çay",
-          "price": 60
+          "price": 60,
+          "image": "/images/coffee-cay.jpg"
         },
         {
           "name": "Fincan Çay",
-          "price": 90
+          "price": 90,
+          "image": "/images/coffee-fincan-cay.jpg"
         }
       ]
     },
@@ -284,7 +289,8 @@ export const menu = {
       "items": [
         {
           "name": "Ice Latte",
-          "price": 220
+          "price": 220,
+          "image": "/images/coffee-ice-latte.jpg"
         },
         {
           "name": "Ice Cappuccino",
