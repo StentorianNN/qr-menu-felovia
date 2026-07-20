@@ -48,7 +48,6 @@ export const menu = {
         {
           "name": "Dana Kaburga Füme",
           "price": 560,
-          "image": "/images/dana-kaburga-fume.jpg",
           "desc": "Dana kaburga füme, dil peyniri, marul, domates, trüflü sıvı tuz, mascarpone peyniri, pesto sos"
         },
         {
@@ -154,7 +153,6 @@ export const menu = {
         {
           "name": "Vişne",
           "price": 150,
-          "image": "/images/juice-visne.jpg",
           "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
@@ -178,13 +176,11 @@ export const menu = {
         {
           "name": "Şeftali",
           "price": 150,
-          "image": "/images/juice-seftali.jpg",
           "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
           "name": "Kayısı",
           "price": 150,
-          "image": "/images/juice-kayisi.jpg",
           "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
@@ -202,13 +198,11 @@ export const menu = {
         {
           "name": "Orman Perisi",
           "price": 150,
-          "image": "/images/juice-orman-perisi.jpg",
           "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
           "name": "Erik",
           "price": 150,
-          "image": "/images/juice-erik.jpg",
           "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
@@ -219,7 +213,6 @@ export const menu = {
         {
           "name": "Ahududu",
           "price": 150,
-          "image": "/images/juice-ahududu.jpg",
           "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
