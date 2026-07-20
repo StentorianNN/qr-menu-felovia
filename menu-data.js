@@ -1,5 +1,4 @@
 // Felovia Gurme — menü verisi. Menüyü değiştirmek için BU dosyayı düzenleyin.
-// (Edit THIS file to change the menu.)
 
 export const menu = {
   "restaurant": "Felovia Gurme",
@@ -11,6 +10,41 @@ export const menu = {
       "name": "Gurme Sandviçler",
       "note": "Ekmek seçenekleri: Focaccia, Baget, Ciabatta",
       "items": [
+        {
+          "name": "Tiftiko Dil Peyniri",
+          "price": 890,
+          "desc": "Tiftik et (120gr), dil peyniri, roka, domates, Kars tereyağı, Felovia çeşnisi, mascarpone, trüflü sıvı tuz, pesto rosso sos"
+        },
+        {
+          "name": "Tiftiko Burrata",
+          "price": 1140,
+          "desc": "Tiftik et (120gr), burrata peyniri, roka, domates, Kars tereyağı, Felovia çeşnisi, balzamik glaze, mascarpone, kekikli sıvı tuz, pesto sos"
+        },
+        {
+          "name": "Tiftiko Mozzarella",
+          "price": 990,
+          "desc": "Tiftik et (120gr), mozzarella peyniri, roka, domates, Kars tereyağı, Felovia çeşnisi, mascarpone, kekikli sıvı tuz, pesto rosso sos"
+        },
+        {
+          "name": "Napoli Burrata",
+          "price": 725,
+          "desc": "Burrata peyniri, roka, domates, zeytinyağı, Felovia çeşnisi, balzamik glaze, mascarpone, kekikli sıvı tuz, pesto sos"
+        },
+        {
+          "name": "Napoli Kaburga Füme",
+          "price": 860,
+          "desc": "Burrata peyniri, dana kaburga füme, roka, domates, zeytinyağı, Felovia çeşnisi, balzamik glaze, mascarpone, kekikli sıvı tuz, pesto sos"
+        },
+        {
+          "name": "Napoli Dana Jambon",
+          "price": 795,
+          "desc": "Burrata peyniri, dana jambon, roka, domates, zeytinyağı, Felovia çeşnisi, balzamik glaze, mascarpone, kekikli sıvı tuz, pesto sos"
+        },
+        {
+          "name": "Napoli Hindi Füme",
+          "price": 765,
+          "desc": "Burrata peyniri, hindi füme, roka, domates, zeytinyağı, Felovia çeşnisi, balzamik glaze, mascarpone, kekikli sıvı tuz, pesto sos"
+        },
         {
           "name": "Dana Kaburga Füme",
           "price": 560,
@@ -35,59 +69,24 @@ export const menu = {
           "desc": "Kars taze kaşar, dil peyniri, marul, domates, trüflü sıvı tuz, mascarpone peyniri, pesto sos"
         },
         {
+          "name": "Feloviç Mozzarella",
+          "price": 525,
+          "desc": "Mozzarella peyniri, roka, domates, zeytinyağı, Felovia çeşnisi, kekikli sıvı tuz, pesto rosso sos"
+        },
+        {
           "name": "Feloviç Kaburga Füme",
           "price": 660,
-          "desc": "Dana kaburga füme, mozzarella peyniri, roka, domates, zeytinyağı, domatesli fesleğenli tuzlu çeşni, kekikli sıvı tuz, pesto rosso sos"
+          "desc": "Dana kaburga füme, mozzarella peyniri, roka, domates, zeytinyağı, Felovia çeşnisi, kekikli sıvı tuz, pesto rosso sos"
         },
         {
           "name": "Feloviç Dana Jambon",
           "price": 595,
-          "desc": "Dana jambon, mozzarella peyniri, roka, domates, zeytinyağı, domatesli fesleğenli tuzlu çeşni, kekikli sıvı tuz, pesto rosso sos"
+          "desc": "Dana jambon, mozzarella peyniri, roka, domates, zeytinyağı, Felovia çeşnisi, kekikli sıvı tuz, pesto rosso sos"
         },
         {
           "name": "Feloviç Hindi Füme",
           "price": 565,
-          "desc": "Hindi füme, mozzarella peyniri, roka, domates, zeytinyağı, domatesli fesleğenli tuzlu çeşni, kekikli sıvı tuz, pesto rosso sos"
-        },
-        {
-          "name": "Feloviç Mozzarella",
-          "price": 525,
-          "desc": "Mozzarella peyniri, roka, domates, zeytinyağı, domatesli fesleğenli tuzlu çeşni, kekikli sıvı tuz, pesto rosso sos"
-        },
-        {
-          "name": "Tiftiko Dil Peyniri",
-          "price": 890,
-          "desc": "Tiftik et (120 gr), dil peyniri, roka, domates, Kars tereyağı, domatesli fesleğenli tuzlu çeşni, mascarpone, trüflü sıvı tuz, pesto sos"
-        },
-        {
-          "name": "Tiftiko Mozzarella",
-          "price": 990,
-          "desc": "Tiftik et (120 gr), mozzarella peyniri, roka, domates, Kars tereyağı, domatesli fesleğenli tuzlu çeşni, mascarpone, trüflü sıvı tuz, pesto sos"
-        },
-        {
-          "name": "Tiftiko Burrata",
-          "price": 1140,
-          "desc": "Tiftik et (120 gr), burrata peyniri, roka, domates, Kars tereyağı, domatesli fesleğenli tuzlu çeşni, balzamik glaze, mascarpone, kekikli sıvı tuz, pesto sos"
-        },
-        {
-          "name": "Napoli Kaburga Füme",
-          "price": 860,
-          "desc": "Burrata peyniri, dana kaburga füme, roka, domates, zeytinyağı, domatesli fesleğenli tuzlu çeşni, balzamik glaze, mascarpone, kekikli sıvı tuz, pesto sos"
-        },
-        {
-          "name": "Napoli Dana Jambon",
-          "price": 795,
-          "desc": "Burrata peyniri, dana jambon, roka, domates, zeytinyağı, domatesli fesleğenli tuzlu çeşni, balzamik glaze, mascarpone, kekikli sıvı tuz, pesto sos"
-        },
-        {
-          "name": "Napoli Hindi Füme",
-          "price": 765,
-          "desc": "Burrata peyniri, hindi füme, roka, domates, zeytinyağı, domatesli fesleğenli tuzlu çeşni, kekikli sıvı tuz, pesto sos"
-        },
-        {
-          "name": "Napoli Burrata",
-          "price": 725,
-          "desc": "Burrata peyniri, roka, domates, zeytinyağı, domatesli fesleğenli tuzlu çeşni, balzamik glaze, mascarpone, kekikli sıvı tuz, pesto sos"
+          "desc": "Hindi füme, mozzarella peyniri, roka, domates, zeytinyağı, Felovia çeşnisi, kekikli sıvı tuz, pesto rosso sos"
         }
       ]
     },
@@ -98,118 +97,152 @@ export const menu = {
         {
           "name": "Karışık Tost",
           "price": 425,
-          "desc": "Dana sucuk, Kars taze kaşarı, lütenitsa sos"
+          "desc": "Dana sucuk, Kars taze kaşar, lütenitsa sos"
         },
         {
           "name": "Kaşarlı Tost",
           "price": 360,
-          "desc": "Kars taze kaşarı, lütenitsa sos"
+          "desc": "Kars taze kaşar, lütenitsa sos"
         },
         {
           "name": "Pestolu Kaşarlı Tost",
           "price": 360,
-          "desc": "Kars taze kaşarı, pesto sos"
+          "desc": "Kars taze kaşar, pesto sos"
         },
         {
           "name": "Hindi Fümeli Tost",
           "price": 390,
-          "desc": "Hindi füme, Kars taze kaşarı, lütenitsa sos"
+          "desc": "Hindi füme, Kars taze kaşar, lütenitsa sos"
         },
         {
           "name": "Kaburga Fümeli Tost",
           "price": 525,
-          "desc": "Kaburga füme, Kars taze kaşarı, mascarpone, lütenitsa sos"
+          "desc": "Kaburga füme, Kars taze kaşar, lütenitsa sos"
         },
         {
           "name": "Gusto Tost",
           "price": 690,
-          "desc": "Dana sucuk, dana jambon, Kars taze kaşarı, turşu, domates, acı biber salçası, lütenitsa sos"
+          "desc": "Dana sucuk, dana jambon, Kars taze kaşar, domates, acı biber salçası, lütenitsa sos"
         },
         {
           "name": "Bello Tost",
           "price": 485,
-          "desc": "Dana sucuk, Kars taze kaşarı, mascarpone, acı biber salçası"
+          "desc": "Dana sucuk, Kars taze kaşar, mascarpone peyniri, acı biber salçası"
         },
         {
           "name": "Şefin Tostu",
           "price": 640,
-          "desc": "İki kat dana sucuk, domates, kornişon turşu, lütenitsa sos, acı biber salçası (ciabatta ya da baget)"
+          "desc": "İki kat dana sucuk, domates, kornişon turşu, acı biber salçası, lütenitsa sos"
         }
       ]
     },
     {
       "name": "Soğuk İçecekler",
-      "note": "Sıkma meyve suları · Şeker ilavesizdir · 250 ml",
       "items": [
         {
-          "name": "Portakal Suyu",
+          "name": "Portakal",
           "price": 150,
-          "image": "/images/juice-portakal.jpg"
+          "image": "/images/juice-portakal.jpg",
+          "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
-          "name": "Nar & Portakal Suyu",
+          "name": "Nar & Portakal",
           "price": 150,
-          "image": "/images/juice-nar-portakal.jpg"
+          "image": "/images/juice-nar-portakal.jpg",
+          "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
-          "name": "Vişne Suyu",
+          "name": "Vişne",
           "price": 150,
-          "image": "/images/juice-visne.jpg"
+          "image": "/images/juice-visne.jpg",
+          "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
-          "name": "Nar Suyu",
+          "name": "Nar",
           "price": 150,
-          "image": "/images/juice-nar.jpg"
+          "image": "/images/juice-nar.jpg",
+          "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
-          "name": "Karadut Suyu",
+          "name": "Karadut",
           "price": 150,
-          "image": "/images/juice-karadut.jpg"
+          "image": "/images/juice-karadut.jpg",
+          "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
-          "name": "Kara Üzüm Suyu",
+          "name": "Kara Üzüm",
           "price": 150,
-          "image": "/images/juice-kara-uzum.jpg"
+          "image": "/images/juice-kara-uzum.jpg",
+          "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
-          "name": "Şeftali Suyu",
+          "name": "Şeftali",
           "price": 150,
-          "image": "/images/juice-seftali.jpg"
+          "image": "/images/juice-seftali.jpg",
+          "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
-          "name": "Kayısı Suyu",
+          "name": "Kayısı",
           "price": 150,
-          "image": "/images/juice-kayisi.jpg"
+          "image": "/images/juice-kayisi.jpg",
+          "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
-          "name": "Böğürtlen Suyu",
+          "name": "Böğürtlen",
           "price": 150,
-          "image": "/images/juice-bogurtlen.jpg"
+          "image": "/images/juice-bogurtlen.jpg",
+          "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
-          "name": "Elma Suyu",
+          "name": "Elma",
           "price": 150,
-          "image": "/images/juice-elma.jpg"
+          "image": "/images/juice-elma.jpg",
+          "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
-          "name": "Orman Perisi Suyu",
+          "name": "Orman Perisi",
           "price": 150,
-          "image": "/images/juice-orman-perisi.jpg"
+          "image": "/images/juice-orman-perisi.jpg",
+          "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
-          "name": "Erik Suyu",
+          "name": "Erik",
           "price": 150,
-          "image": "/images/juice-erik.jpg"
+          "image": "/images/juice-erik.jpg",
+          "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
-          "name": "Ahududu Suyu",
+          "name": "Karışık",
           "price": 150,
-          "image": "/images/juice-ahududu.jpg"
+          "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
-          "name": "Coca Cola",
+          "name": "Ahududu",
+          "price": 150,
+          "image": "/images/juice-ahududu.jpg",
+          "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
+        },
+        {
+          "name": "Kambucha / Fermente Yeşil Çay",
+          "price": 250,
+          "desc": "Çeşitleri için sorunuz"
+        },
+        {
+          "name": "Özerhisar Ayran",
           "price": 120,
-          "image": "/images/drink-cola.jpg"
+          "image": "/images/drink-ayran.jpg",
+          "desc": "Doğal olarak ekşi bir ayrandır"
+        },
+        {
+          "name": "Su",
+          "price": 50,
+          "image": "/images/drink-su.jpg"
+        },
+        {
+          "name": "Soda",
+          "price": 90,
+          "image": "/images/drink-soda.jpg",
+          "desc": "Uludağ Premium"
         },
         {
           "name": "Coca Cola Zero",
@@ -217,48 +250,68 @@ export const menu = {
           "image": "/images/drink-cola-zero.jpg"
         },
         {
-          "name": "Özerhisar Ayran",
+          "name": "Coca Cola",
           "price": 120,
-          "image": "/images/drink-ayran.jpg"
+          "image": "/images/drink-cola.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Frozen",
+      "items": [
+        {
+          "name": "Ananas Frozen",
+          "price": 240,
+          "desc": "Gerçek ananas ve püresinden yapılır"
         },
         {
-          "name": "Arslan Ayran",
-          "price": 120,
-          "image": "/images/drink-ayran-arslan.jpg"
+          "name": "Mango Frozen",
+          "price": 240,
+          "desc": "Gerçek mango ve püresinden yapılır"
         },
         {
-          "name": "Soda",
-          "price": 90,
-          "image": "/images/drink-soda.jpg"
+          "name": "Çilek Frozen",
+          "price": 240,
+          "desc": "Gerçek çilek ve püresinden yapılır"
         },
         {
-          "name": "Su",
-          "price": 50,
-          "image": "/images/drink-su.jpg"
+          "name": "Ahududu Frozen",
+          "price": 240,
+          "desc": "Gerçek ahududu ve püresinden yapılır"
+        },
+        {
+          "name": "Orman Meyveli Frozen",
+          "price": 240,
+          "desc": "Gerçek orman meyveleri ve püresinden yapılır"
+        },
+        {
+          "name": "Muz Frozen",
+          "price": 240,
+          "desc": "Gerçek muz ve püresinden yapılır"
+        }
+      ]
+    },
+    {
+      "name": "Soğuk Kahveler",
+      "items": [
+        {
+          "name": "Ice Cappuccino",
+          "price": 230
+        },
+        {
+          "name": "Ice Latte",
+          "price": 220,
+          "image": "/images/coffee-ice-latte.jpg"
+        },
+        {
+          "name": "Ice Americano",
+          "price": 200
         }
       ]
     },
     {
       "name": "Sıcak İçecekler",
       "items": [
-        {
-          "name": "Macchiato",
-          "price": 210
-        },
-        {
-          "name": "Cappuccino",
-          "price": 220
-        },
-        {
-          "name": "Latte",
-          "price": 210,
-          "image": "/images/coffee-latte.jpg"
-        },
-        {
-          "name": "Filtre Kahve",
-          "price": 190,
-          "image": "/images/coffee-filtre.jpg"
-        },
         {
           "name": "Espresso",
           "price": 120
@@ -267,6 +320,20 @@ export const menu = {
           "name": "Americano",
           "price": 190,
           "image": "/images/coffee-americano.jpg"
+        },
+        {
+          "name": "Latte",
+          "price": 210,
+          "image": "/images/coffee-latte.jpg"
+        },
+        {
+          "name": "Cappuccino",
+          "price": 220
+        },
+        {
+          "name": "Filtre Kahve",
+          "price": 190,
+          "image": "/images/coffee-filtre.jpg"
         },
         {
           "name": "Türk Kahvesi",
@@ -279,26 +346,18 @@ export const menu = {
         },
         {
           "name": "Fincan Çay",
-          "price": 90,
+          "price": 150,
           "image": "/images/coffee-fincan-cay.jpg"
         }
       ]
     },
     {
-      "name": "Soğuk Kahveler",
+      "name": "Tatlı",
       "items": [
         {
-          "name": "Ice Latte",
-          "price": 220,
-          "image": "/images/coffee-ice-latte.jpg"
-        },
-        {
-          "name": "Ice Cappuccino",
-          "price": 230
-        },
-        {
-          "name": "Ice Americano",
-          "price": 200
+          "name": "Toscana Rüyası",
+          "price": 450,
+          "desc": "Burrata peyniri üzerine şekersiz reçel, ceviz ve tarçın"
         }
       ]
     }
