@@ -82,13 +82,16 @@
   nav::-webkit-scrollbar { display: none; }
   nav a {
     flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     text-decoration: none;
     color: var(--cream-soft);
     font-weight: 700;
     font-size: 0.8rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    padding: 0.45rem 0.9rem;
+    padding: 0 0.9rem;
     border-radius: 999px;
     transition: color 0.15s, background 0.15s;
   }
@@ -184,13 +187,16 @@
     margin-top: 1.5rem;
     padding: 0 1.25rem;
   }
+  .featured-viewport {
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto;
+  }
   .featured-track {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
-    max-width: 640px;
-    margin: 0 auto;
     border-radius: 18px;
   }
   .featured-track::-webkit-scrollbar { display: none; }
@@ -210,19 +216,55 @@
     object-fit: cover;
     display: block;
   }
+  .featured-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0,0,0,0.45);
+    color: var(--cream);
+    font-size: 1.4rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .featured-arrow:hover { background: rgba(0,0,0,0.65); }
+  .featured-arrow:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  .featured-arrow-prev { left: 0.6rem; }
+  .featured-arrow-next { right: 0.6rem; }
   .featured-dots {
     display: flex;
     justify-content: center;
-    gap: 0.4rem;
-    margin-top: 0.7rem;
+    gap: 0.2rem;
+    margin-top: 0.5rem;
   }
-  .featured-dots span {
+  .featured-dots button {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .featured-dots button::before {
+    content: "";
     width: 6px;
     height: 6px;
     border-radius: 50%;
     background: var(--line);
+    transition: background 0.15s, transform 0.15s;
   }
-  .featured-dots span.active { background: var(--gold); }
+  .featured-dots button.active::before { background: var(--gold); transform: scale(1.3); }
+  .featured-dots button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 50%; }
 </style>
 </head>
 <body>
@@ -234,16 +276,25 @@
   </header>
 
   <section class="featured" aria-label="Sandviç fotoğrafları">
-    <div class="featured-track" id="featured-track">
-      <div class="featured-slide"><img src="/images/slider-1.jpg" alt="Felovia sandviç" loading="lazy" /></div>
-      <div class="featured-slide"><img src="/images/slider-2.jpg" alt="Felovia sandviç" loading="lazy" /></div>
-      <div class="featured-slide"><img src="/images/slider-3.jpg" alt="Felovia sandviç" loading="lazy" /></div>
-      <div class="featured-slide"><img src="/images/slider-4.jpg" alt="Felovia sandviç" loading="lazy" /></div>
-      <div class="featured-slide"><img src="/images/slider-5.jpg" alt="Felovia sandviç" loading="lazy" /></div>
-      <div class="featured-slide"><img src="/images/slider-6.jpg" alt="Felovia sandviç" loading="lazy" /></div>
+    <div class="featured-viewport">
+      <div class="featured-track" id="featured-track">
+        <div class="featured-slide"><img src="/images/slider-1.jpg" alt="Hindi füme, marul ve domatesli focaccia sandviç" /></div>
+        <div class="featured-slide"><img src="/images/slider-2.jpg" alt="Dana eti, marul ve domatesli sandviç" loading="lazy" /></div>
+        <div class="featured-slide"><img src="/images/slider-3.jpg" alt="Eritilmiş peynirli, jambonlu ve rokalı sandviç" loading="lazy" /></div>
+        <div class="featured-slide"><img src="/images/slider-4.jpg" alt="Kıyılmış dana eti, eritilmiş peynir ve rokalı sandviç" loading="lazy" /></div>
+        <div class="featured-slide"><img src="/images/slider-5.jpg" alt="Pulled dana eti, eritilmiş peynir ve rokalı sandviç" loading="lazy" /></div>
+        <div class="featured-slide"><img src="/images/slider-6.jpg" alt="Pulled dana eti, peynir, roka ve domatesli sandviç" loading="lazy" /></div>
+      </div>
+      <button class="featured-arrow featured-arrow-prev" id="featured-prev" aria-label="Önceki fotoğraf">‹</button>
+      <button class="featured-arrow featured-arrow-next" id="featured-next" aria-label="Sonraki fotoğraf">›</button>
     </div>
     <div class="featured-dots" id="featured-dots">
-      <span class="active"></span><span></span><span></span><span></span><span></span><span></span>
+      <button class="active" aria-label="Fotoğraf 1"></button>
+      <button aria-label="Fotoğraf 2"></button>
+      <button aria-label="Fotoğraf 3"></button>
+      <button aria-label="Fotoğraf 4"></button>
+      <button aria-label="Fotoğraf 5"></button>
+      <button aria-label="Fotoğraf 6"></button>
     </div>
   </section>
 
@@ -259,7 +310,7 @@
   </footer>
 
 <script>
-  window.__FALLBACK__ = {"restaurant":"Felovia Gurme","tagline":"Gurme Sandviçler · Tostlar · Kahve","logo":"/images/logo.png","currency":"₺","categories":[{"name":"Gurme Sandviçler","note":"Ekmek seçenekleri: Focaccia, Baget, Ciabatta","items":[{"name":"Tiftiko Dil Peyniri","price":890,"desc":"Tiftik et (120gr), dil peyniri, roka, domates, Kars tereyağı, Felovia çeşnisi, mascarpone, trüflü sıvı tuz, pesto rosso sos"},{"name":"Tiftiko Burrata","price":1140,"desc":"Tiftik et (120gr), burrata peyniri, roka, domates, Kars tereyağı, Felovia çeşnisi, balzamik glaze, mascarpone, kekikli sıvı tuz, pesto sos"},{"name":"Tiftiko Mozzarella","price":990,"desc":"Tiftik et (120gr), mozzarella peyniri, roka, domates, Kars tereyağı, Felovia çeşnisi, mascarpone, kekikli sıvı tuz, pesto rosso sos"},{"name":"Napoli Burrata","price":725,"desc":"Burrata peyniri, roka, domates, zeytinyağı, Felovia çeşnisi, balzamik glaze, mascarpone, kekikli sıvı tuz, pesto sos"},{"name":"Napoli Kaburga Füme","price":860,"desc":"Burrata peyniri, dana kaburga füme, roka, domates, zeytinyağı, Felovia çeşnisi, balzamik glaze, mascarpone, kekikli sıvı tuz, pesto sos"},{"name":"Napoli Dana Jambon","price":795,"desc":"Burrata peyniri, dana jambon, roka, domates, zeytinyağı, Felovia çeşnisi, balzamik glaze, mascarpone, kekikli sıvı tuz, pesto sos"},{"name":"Napoli Hindi Füme","price":765,"desc":"Burrata peyniri, hindi füme, roka, domates, zeytinyağı, Felovia çeşnisi, balzamik glaze, mascarpone, kekikli sıvı tuz, pesto sos"},{"name":"Dana Kaburga Füme","price":560,"desc":"Dana kaburga füme, dil peyniri, marul, domates, trüflü sıvı tuz, mascarpone peyniri, pesto sos"},{"name":"Dana Jambon","price":495,"desc":"Dana jambon, dil peyniri, marul, domates, trüflü sıvı tuz, mascarpone peyniri, pesto sos"},{"name":"Hindi Füme","price":465,"desc":"Hindi füme, dil peyniri, marul, domates, trüflü sıvı tuz, mascarpone peyniri, pesto sos"},{"name":"Üç Peynir","price":425,"desc":"Kars taze kaşar, dil peyniri, marul, domates, trüflü sıvı tuz, mascarpone peyniri, pesto sos"},{"name":"Feloviç Mozzarella","price":525,"desc":"Mozzarella peyniri, roka, domates, zeytinyağı, Felovia çeşnisi, kekikli sıvı tuz, pesto rosso sos"},{"name":"Feloviç Kaburga Füme","price":660,"desc":"Dana kaburga füme, mozzarella peyniri, roka, domates, zeytinyağı, Felovia çeşnisi, kekikli sıvı tuz, pesto rosso sos"},{"name":"Feloviç Dana Jambon","price":595,"desc":"Dana jambon, mozzarella peyniri, roka, domates, zeytinyağı, Felovia çeşnisi, kekikli sıvı tuz, pesto rosso sos"},{"name":"Feloviç Hindi Füme","price":565,"desc":"Hindi füme, mozzarella peyniri, roka, domates, zeytinyağı, Felovia çeşnisi, kekikli sıvı tuz, pesto rosso sos"}]},{"name":"Gurme Tostlar","note":"Ekmek seçenekleri: Bazlama, Baget, Ciabatta","items":[{"name":"Karışık Tost","price":425,"desc":"Dana sucuk, Kars taze kaşar, lütenitsa sos"},{"name":"Kaşarlı Tost","price":360,"desc":"Kars taze kaşar, lütenitsa sos"},{"name":"Pestolu Kaşarlı Tost","price":360,"desc":"Kars taze kaşar, pesto sos"},{"name":"Hindi Fümeli Tost","price":390,"desc":"Hindi füme, Kars taze kaşar, lütenitsa sos"},{"name":"Kaburga Fümeli Tost","price":525,"desc":"Kaburga füme, Kars taze kaşar, lütenitsa sos"},{"name":"Gusto Tost","price":690,"desc":"Dana sucuk, dana jambon, Kars taze kaşar, domates, acı biber salçası, lütenitsa sos"},{"name":"Bello Tost","price":485,"desc":"Dana sucuk, Kars taze kaşar, mascarpone peyniri, acı biber salçası"},{"name":"Şefin Tostu","price":640,"desc":"İki kat dana sucuk, domates, kornişon turşu, acı biber salçası, lütenitsa sos"}]},{"name":"Soğuk İçecekler","items":[{"name":"Portakal","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Nar & Portakal","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Vişne","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Nar","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Karadut","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Kara Üzüm","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Şeftali","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Kayısı","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Böğürtlen","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Elma","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Orman Perisi","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Erik","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Karışık","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Ahududu","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Kambucha / Fermente Yeşil Çay","price":250,"desc":"Çeşitleri için sorunuz"},{"name":"Özerhisar Ayran","price":120,"desc":"Doğal olarak ekşi bir ayrandır"},{"name":"Su","price":50},{"name":"Soda","price":90,"desc":"Uludağ Premium"},{"name":"Coca Cola Zero","price":120},{"name":"Coca Cola","price":120}]},{"name":"Frozen","items":[{"name":"Ananas Frozen","price":240,"desc":"Gerçek ananas ve püresinden yapılır"},{"name":"Mango Frozen","price":240,"desc":"Gerçek mango ve püresinden yapılır"},{"name":"Çilek Frozen","price":240,"desc":"Gerçek çilek ve püresinden yapılır"},{"name":"Ahududu Frozen","price":240,"desc":"Gerçek ahududu ve püresinden yapılır"},{"name":"Orman Meyveli Frozen","price":240,"desc":"Gerçek orman meyveleri ve püresinden yapılır"},{"name":"Muz Frozen","price":240,"desc":"Gerçek muz ve püresinden yapılır"}]},{"name":"Soğuk Kahveler","items":[{"name":"Ice Cappuccino","price":230},{"name":"Ice Latte","price":220},{"name":"Ice Americano","price":200}]},{"name":"Sıcak İçecekler","items":[{"name":"Espresso","price":120},{"name":"Americano","price":190},{"name":"Latte","price":210},{"name":"Cappuccino","price":220},{"name":"Filtre Kahve","price":190},{"name":"Türk Kahvesi","price":150},{"name":"Çay","price":60},{"name":"Fincan Çay","price":150}]},{"name":"Tatlı","items":[{"name":"Toscana Rüyası","price":450,"desc":"Burrata peyniri üzerine şekersiz reçel, ceviz ve tarçın"}]}]};
+  window.__FALLBACK__ = {"restaurant":"Felovia Gurme","tagline":"Gurme Sandviçler · Tostlar · Kahve","logo":"/images/logo.png","currency":"₺","categories":[{"name":"Favoriler","note":"Şefin önerdiği sandviçler","items":[{"name":"Feloviç Kaburga Füme","price":660,"desc":"Dana kaburga füme, mozzarella peyniri, roka, domates, zeytinyağı, Felovia çeşnisi, kekikli sıvı tuz, pesto rosso sos"},{"name":"Tiftiko Mozzarella","price":990,"desc":"Tiftik et (120gr), mozzarella peyniri, roka, domates, Kars tereyağı, Felovia çeşnisi, mascarpone, kekikli sıvı tuz, pesto rosso sos"},{"name":"Hindi Füme","price":465,"desc":"Hindi füme, dil peyniri, marul, domates, trüflü sıvı tuz, mascarpone peyniri, pesto sos"}]},{"name":"Gurme Sandviçler","note":"Ekmek seçenekleri: Focaccia, Baget, Ciabatta","items":[{"name":"Tiftiko Dil Peyniri","price":890,"desc":"Tiftik et (120gr), dil peyniri, roka, domates, Kars tereyağı, Felovia çeşnisi, mascarpone, trüflü sıvı tuz, pesto rosso sos"},{"name":"Tiftiko Burrata","price":1140,"desc":"Tiftik et (120gr), burrata peyniri, roka, domates, Kars tereyağı, Felovia çeşnisi, balzamik glaze, mascarpone, kekikli sıvı tuz, pesto sos"},{"name":"Tiftiko Mozzarella","price":990,"desc":"Tiftik et (120gr), mozzarella peyniri, roka, domates, Kars tereyağı, Felovia çeşnisi, mascarpone, kekikli sıvı tuz, pesto rosso sos"},{"name":"Napoli Burrata","price":725,"desc":"Burrata peyniri, roka, domates, zeytinyağı, Felovia çeşnisi, balzamik glaze, mascarpone, kekikli sıvı tuz, pesto sos"},{"name":"Napoli Kaburga Füme","price":860,"desc":"Burrata peyniri, dana kaburga füme, roka, domates, zeytinyağı, Felovia çeşnisi, balzamik glaze, mascarpone, kekikli sıvı tuz, pesto sos"},{"name":"Napoli Dana Jambon","price":795,"desc":"Burrata peyniri, dana jambon, roka, domates, zeytinyağı, Felovia çeşnisi, balzamik glaze, mascarpone, kekikli sıvı tuz, pesto sos"},{"name":"Napoli Hindi Füme","price":765,"desc":"Burrata peyniri, hindi füme, roka, domates, zeytinyağı, Felovia çeşnisi, balzamik glaze, mascarpone, kekikli sıvı tuz, pesto sos"},{"name":"Dana Kaburga Füme","price":560,"desc":"Dana kaburga füme, dil peyniri, marul, domates, trüflü sıvı tuz, mascarpone peyniri, pesto sos"},{"name":"Dana Jambon","price":495,"desc":"Dana jambon, dil peyniri, marul, domates, trüflü sıvı tuz, mascarpone peyniri, pesto sos"},{"name":"Hindi Füme","price":465,"desc":"Hindi füme, dil peyniri, marul, domates, trüflü sıvı tuz, mascarpone peyniri, pesto sos"},{"name":"Üç Peynir","price":425,"desc":"Kars taze kaşar, dil peyniri, marul, domates, trüflü sıvı tuz, mascarpone peyniri, pesto sos"},{"name":"Feloviç Mozzarella","price":525,"desc":"Mozzarella peyniri, roka, domates, zeytinyağı, Felovia çeşnisi, kekikli sıvı tuz, pesto rosso sos"},{"name":"Feloviç Kaburga Füme","price":660,"desc":"Dana kaburga füme, mozzarella peyniri, roka, domates, zeytinyağı, Felovia çeşnisi, kekikli sıvı tuz, pesto rosso sos"},{"name":"Feloviç Dana Jambon","price":595,"desc":"Dana jambon, mozzarella peyniri, roka, domates, zeytinyağı, Felovia çeşnisi, kekikli sıvı tuz, pesto rosso sos"},{"name":"Feloviç Hindi Füme","price":565,"desc":"Hindi füme, mozzarella peyniri, roka, domates, zeytinyağı, Felovia çeşnisi, kekikli sıvı tuz, pesto rosso sos"}]},{"name":"Gurme Tostlar","note":"Ekmek seçenekleri: Bazlama, Baget, Ciabatta","items":[{"name":"Karışık Tost","price":425,"desc":"Dana sucuk, Kars taze kaşar, lütenitsa sos"},{"name":"Kaşarlı Tost","price":360,"desc":"Kars taze kaşar, lütenitsa sos"},{"name":"Pestolu Kaşarlı Tost","price":360,"desc":"Kars taze kaşar, pesto sos"},{"name":"Hindi Fümeli Tost","price":390,"desc":"Hindi füme, Kars taze kaşar, lütenitsa sos"},{"name":"Kaburga Fümeli Tost","price":525,"desc":"Kaburga füme, Kars taze kaşar, lütenitsa sos"},{"name":"Gusto Tost","price":690,"desc":"Dana sucuk, dana jambon, Kars taze kaşar, domates, acı biber salçası, lütenitsa sos"},{"name":"Bello Tost","price":485,"desc":"Dana sucuk, Kars taze kaşar, mascarpone peyniri, acı biber salçası"},{"name":"Şefin Tostu","price":640,"desc":"İki kat dana sucuk, domates, kornişon turşu, acı biber salçası, lütenitsa sos"}]},{"name":"Soğuk İçecekler","items":[{"name":"Portakal","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Nar & Portakal","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Vişne","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Nar","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Karadut","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Kara Üzüm","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Şeftali","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Kayısı","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Böğürtlen","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Elma","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Orman Perisi","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Erik","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Karışık","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Ahududu","price":150,"desc":"Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"},{"name":"Kambucha / Fermente Yeşil Çay","price":250,"desc":"Çeşitleri için sorunuz"},{"name":"Özerhisar Ayran","price":120,"desc":"Doğal olarak ekşi bir ayrandır"},{"name":"Su","price":50},{"name":"Soda","price":90,"desc":"Uludağ Premium"},{"name":"Coca Cola Zero","price":120},{"name":"Coca Cola","price":120}]},{"name":"Frozen","items":[{"name":"Ananas Frozen","price":240,"desc":"Gerçek ananas ve püresinden yapılır"},{"name":"Mango Frozen","price":240,"desc":"Gerçek mango ve püresinden yapılır"},{"name":"Çilek Frozen","price":240,"desc":"Gerçek çilek ve püresinden yapılır"},{"name":"Ahududu Frozen","price":240,"desc":"Gerçek ahududu ve püresinden yapılır"},{"name":"Orman Meyveli Frozen","price":240,"desc":"Gerçek orman meyveleri ve püresinden yapılır"},{"name":"Muz Frozen","price":240,"desc":"Gerçek muz ve püresinden yapılır"}]},{"name":"Soğuk Kahveler","items":[{"name":"Ice Cappuccino","price":230},{"name":"Ice Latte","price":220},{"name":"Ice Americano","price":200}]},{"name":"Sıcak İçecekler","items":[{"name":"Espresso","price":120},{"name":"Americano","price":190},{"name":"Latte","price":210},{"name":"Cappuccino","price":220},{"name":"Filtre Kahve","price":190},{"name":"Türk Kahvesi","price":150},{"name":"Çay","price":60},{"name":"Fincan Çay","price":150}]},{"name":"Tatlı","items":[{"name":"Toscana Rüyası","price":450,"desc":"Burrata peyniri üzerine şekersiz reçel, ceviz ve tarçın"}]}]};
 
   const slug = (s) => s.toLowerCase()
     .replaceAll("ı","i").replaceAll("ş","s").replaceAll("ğ","g")
@@ -361,6 +412,8 @@
 
   const featuredTrack = document.getElementById("featured-track");
   const featuredDots = document.getElementById("featured-dots");
+  const featuredPrev = document.getElementById("featured-prev");
+  const featuredNext = document.getElementById("featured-next");
   if (featuredTrack && featuredDots) {
     const dots = [...featuredDots.children];
     const slides = [...featuredTrack.children];
@@ -376,6 +429,22 @@
       { root: featuredTrack, threshold: 0.6 }
     );
     slides.forEach((s) => io.observe(s));
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        slides[i].scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+      });
+    });
+    const currentIndex = () =>
+      Math.round(featuredTrack.scrollLeft / featuredTrack.clientWidth);
+    featuredPrev?.addEventListener("click", () => {
+      const i = Math.max(0, currentIndex() - 1);
+      slides[i].scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+    });
+    featuredNext?.addEventListener("click", () => {
+      const i = Math.min(slides.length - 1, currentIndex() + 1);
+      slides[i].scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+    });
   }
 </script>
 </body>

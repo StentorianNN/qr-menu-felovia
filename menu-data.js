@@ -7,6 +7,27 @@ export const menu = {
   "currency": "₺",
   "categories": [
     {
+      "name": "Favoriler",
+      "note": "Şefin önerdiği sandviçler",
+      "items": [
+        {
+          "name": "Feloviç Kaburga Füme",
+          "price": 660,
+          "desc": "Dana kaburga füme, mozzarella peyniri, roka, domates, zeytinyağı, Felovia çeşnisi, kekikli sıvı tuz, pesto rosso sos"
+        },
+        {
+          "name": "Tiftiko Mozzarella",
+          "price": 990,
+          "desc": "Tiftik et (120gr), mozzarella peyniri, roka, domates, Kars tereyağı, Felovia çeşnisi, mascarpone, kekikli sıvı tuz, pesto rosso sos"
+        },
+        {
+          "name": "Hindi Füme",
+          "price": 465,
+          "desc": "Hindi füme, dil peyniri, marul, domates, trüflü sıvı tuz, mascarpone peyniri, pesto sos"
+        }
+      ]
+    },
+    {
       "name": "Gurme Sandviçler",
       "note": "Ekmek seçenekleri: Focaccia, Baget, Ciabatta",
       "items": [
