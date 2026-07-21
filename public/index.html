@@ -178,6 +178,51 @@
   }
 
   .status { text-align: center; color: var(--cream-soft); padding: 3rem 1rem; }
+
+  /* ---------- Featured photo slider ---------- */
+  .featured {
+    margin-top: 1.5rem;
+    padding: 0 1.25rem;
+  }
+  .featured-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    max-width: 640px;
+    margin: 0 auto;
+    border-radius: 18px;
+  }
+  .featured-track::-webkit-scrollbar { display: none; }
+  .featured-slide {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 18px;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+  .featured-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .featured-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: 0.7rem;
+  }
+  .featured-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--line);
+  }
+  .featured-dots span.active { background: var(--gold); }
 </style>
 </head>
 <body>
@@ -187,6 +232,20 @@
     <p class="tagline" id="restaurant-tagline"></p>
     <div class="rule"></div>
   </header>
+
+  <section class="featured" aria-label="Sandviç fotoğrafları">
+    <div class="featured-track" id="featured-track">
+      <div class="featured-slide"><img src="/images/slider-1.jpg" alt="Felovia sandviç" loading="lazy" /></div>
+      <div class="featured-slide"><img src="/images/slider-2.jpg" alt="Felovia sandviç" loading="lazy" /></div>
+      <div class="featured-slide"><img src="/images/slider-3.jpg" alt="Felovia sandviç" loading="lazy" /></div>
+      <div class="featured-slide"><img src="/images/slider-4.jpg" alt="Felovia sandviç" loading="lazy" /></div>
+      <div class="featured-slide"><img src="/images/slider-5.jpg" alt="Felovia sandviç" loading="lazy" /></div>
+      <div class="featured-slide"><img src="/images/slider-6.jpg" alt="Felovia sandviç" loading="lazy" /></div>
+    </div>
+    <div class="featured-dots" id="featured-dots">
+      <span class="active"></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </section>
 
   <nav id="category-nav" aria-label="Menü kategorileri"></nav>
 
@@ -299,6 +358,25 @@
     }
   }
   load();
+
+  const featuredTrack = document.getElementById("featured-track");
+  const featuredDots = document.getElementById("featured-dots");
+  if (featuredTrack && featuredDots) {
+    const dots = [...featuredDots.children];
+    const slides = [...featuredTrack.children];
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const i = slides.indexOf(entry.target);
+            dots.forEach((d, di) => d.classList.toggle("active", di === i));
+          }
+        }
+      },
+      { root: featuredTrack, threshold: 0.6 }
+    );
+    slides.forEach((s) => io.observe(s));
+  }
 </script>
 </body>
 </html>
