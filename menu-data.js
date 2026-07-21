@@ -53,13 +53,11 @@ export const menu = {
         {
           "name": "Dana Jambon",
           "price": 495,
-          "image": "/images/dana-jambon.jpg",
           "desc": "Dana jambon, dil peyniri, marul, domates, trüflü sıvı tuz, mascarpone peyniri, pesto sos"
         },
         {
           "name": "Hindi Füme",
           "price": 465,
-          "image": "/images/hindi-fume.jpg",
           "desc": "Hindi füme, dil peyniri, marul, domates, trüflü sıvı tuz, mascarpone peyniri, pesto sos"
         },
         {
@@ -141,13 +139,11 @@ export const menu = {
         {
           "name": "Portakal",
           "price": 150,
-          "image": "/images/juice-portakal.jpg",
           "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
           "name": "Nar & Portakal",
           "price": 150,
-          "image": "/images/juice-nar-portakal.jpg",
           "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
@@ -158,19 +154,16 @@ export const menu = {
         {
           "name": "Nar",
           "price": 150,
-          "image": "/images/juice-nar.jpg",
           "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
           "name": "Karadut",
           "price": 150,
-          "image": "/images/juice-karadut.jpg",
           "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
           "name": "Kara Üzüm",
           "price": 150,
-          "image": "/images/juice-kara-uzum.jpg",
           "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
@@ -186,13 +179,11 @@ export const menu = {
         {
           "name": "Böğürtlen",
           "price": 150,
-          "image": "/images/juice-bogurtlen.jpg",
           "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
           "name": "Elma",
           "price": 150,
-          "image": "/images/juice-elma.jpg",
           "desc": "Şeker ilavesiz, %100 meyveden soğuk sıkım cam şişe"
         },
         {
@@ -223,29 +214,24 @@ export const menu = {
         {
           "name": "Özerhisar Ayran",
           "price": 120,
-          "image": "/images/drink-ayran.jpg",
           "desc": "Doğal olarak ekşi bir ayrandır"
         },
         {
           "name": "Su",
-          "price": 50,
-          "image": "/images/drink-su.jpg"
+          "price": 50
         },
         {
           "name": "Soda",
           "price": 90,
-          "image": "/images/drink-soda.jpg",
           "desc": "Uludağ Premium"
         },
         {
           "name": "Coca Cola Zero",
-          "price": 120,
-          "image": "/images/drink-cola-zero.jpg"
+          "price": 120
         },
         {
           "name": "Coca Cola",
-          "price": 120,
-          "image": "/images/drink-cola.jpg"
+          "price": 120
         }
       ]
     },
@@ -293,8 +279,7 @@ export const menu = {
         },
         {
           "name": "Ice Latte",
-          "price": 220,
-          "image": "/images/coffee-ice-latte.jpg"
+          "price": 220
         },
         {
           "name": "Ice Americano",
@@ -311,13 +296,11 @@ export const menu = {
         },
         {
           "name": "Americano",
-          "price": 190,
-          "image": "/images/coffee-americano.jpg"
+          "price": 190
         },
         {
           "name": "Latte",
-          "price": 210,
-          "image": "/images/coffee-latte.jpg"
+          "price": 210
         },
         {
           "name": "Cappuccino",
@@ -325,8 +308,7 @@ export const menu = {
         },
         {
           "name": "Filtre Kahve",
-          "price": 190,
-          "image": "/images/coffee-filtre.jpg"
+          "price": 190
         },
         {
           "name": "Türk Kahvesi",
@@ -334,13 +316,11 @@ export const menu = {
         },
         {
           "name": "Çay",
-          "price": 60,
-          "image": "/images/coffee-cay.jpg"
+          "price": 60
         },
         {
           "name": "Fincan Çay",
-          "price": 150,
-          "image": "/images/coffee-fincan-cay.jpg"
+          "price": 150
         }
       ]
     },
